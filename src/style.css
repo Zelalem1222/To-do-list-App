@@ -58,3 +58,8 @@ button {
 .fa-solid {
   color: lightgray;
 }
+
+.check-box {
+    background-color: black;
+    flex: 1;
+}
