@@ -60,6 +60,18 @@ button {
 }
 
 .check-box {
-    background-color: black;
+    background-color: yellow;
     flex: 1;
+}
+
+.checked-class {
+text-decoration: line-through;
+}
+
+.fa-trash-can {
+    display: none;
+}
+
+.delete-icon {
+    display: block;
 }

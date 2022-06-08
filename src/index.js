@@ -21,14 +21,23 @@ const addTodo = (todoValue)=> {
           <span>${todoValue}</span>
           </div>
           <i class="fa-solid fa-ellipsis-vertical"></i>
+          <i class="fa-solid fa-trash-can"></i>
           `;
     todolists.append(todoContainer);
     const checkbox = document.querySelectorAll('.check');
-    for (let i=0; i < checkbox.length; i++){
-        checkbox[i].addEventListener('click' , ()=> {
-        checkbox[i].parentElement.classList.toggle('check-box')
-        })
-    }
+    checkbox.forEach(check => {
+        check.addEventListener('click' , ()=> {
+            check.parentElement.classList.toggle('check-box');
+            check.nextElementSibling.classList.toggle('checked-class');
+            check.parentElement.nextElementSibling.nextElementSibling.classList.toggle('delete-icon');
+            check.parentElement.nextElementSibling.classList.toggle('fa-trash-can')
+    })
+        
+     })
+
+     const item = new Object(checkbox.length - 1 , todoValue , false  );
+     arr.push(item);
+     localStorage.setItem('list' , JSON.stringify(arr));
 }
 
 
