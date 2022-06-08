@@ -1,61 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 body {
-    background-color: whitesmoke;
-    font-family: 'Poppins', sans-serif;
+  background-color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
 }
 
 #container {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 5%;
-    background-color: white;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 5%;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
 form .list-input {
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    border-bottom: 1px solid lightgray;
-    width: -webkit-fill-available;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  width: 96%;
 }
 
 .border-bottom {
-    border-bottom: 1px solid lightgray;
-    /* margin-bottom: 10%; */
-    padding: 3% 2%;
+  border-bottom: 1px solid lightgray;
+  padding: 3% 2%;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
 }
 
 .fa-ellipsis-vertical:hover {
-    cursor: move;
+  cursor: move;
 }
 
 button {
-    color: darkgray;
-    border: none;
-    font-size: 20px;
-    width: 100%;
-    height: 60px;
-    cursor: pointer;
+  color: darkgray;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
 }
 
 .fa-solid {
-    color: lightgray;
+  color: lightgray;
 }
