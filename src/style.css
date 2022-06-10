@@ -80,7 +80,12 @@ button {
 }
 
 .changeBg {
-  color: currentColor;
+  color: blue;
+  background-color: burlywood;
+}
+
+.decoration {
+  text-decoration: line-through;
 }
 
 .delete-icon {

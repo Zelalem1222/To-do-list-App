@@ -23,6 +23,7 @@ const createList = () => {
   checkboxes.addEventListener('click', () => {
     editIcon.classList.toggle('display-none');
     trashIcon.classList.toggle('remove');
+    listText.classList.toggle('decoration');
     list.classList.toggle('changeBg');
     const checkedBox = document.querySelectorAll('.list');
 
@@ -38,6 +39,24 @@ const createList = () => {
       empty.push(getLocal[i]);
       localStorage.setItem('list', JSON.stringify(empty));
     }
+  });
+
+  const clearAll = document.querySelector('#clear');
+  clearAll.addEventListener('click', () => {
+    const getLocal = JSON.parse(localStorage.getItem('list'));
+    const selected = document.querySelectorAll('.changeBg');
+    for (let i = 0; i < selected.length; i += 1) {
+      form.removeChild(selected[i]);
+    }
+    /* eslint-disable */
+    const empty = [];
+    for (let i = 0; i < getLocal.length; i += 1) {
+      if (getLocal[i].completed === true) {
+        continue;
+      }
+      empty.push(getLocal[i]);
+    }
+    localStorage.setItem('list', JSON.stringify(empty));
   });
 
   trashIcon.addEventListener('click', () => {
