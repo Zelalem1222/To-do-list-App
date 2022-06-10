@@ -1,10 +1,7 @@
-
 import './style.css';
-import Object from './constructor.js'
+import Object from './constructor.js';
 
 let array = [];
-
-
 
 // Create list
 const createList = () => {
@@ -21,42 +18,38 @@ const createList = () => {
   editIcon.className = 'fa-solid fa-ellipsis-vertical';
   const trashIcon = document.createElement('i');
   trashIcon.className = 'fa-solid fa-trash-can remove';
-  list.append(checkboxes, listText,editIcon, trashIcon);
-  
+  list.append(checkboxes, listText, editIcon, trashIcon);
+
   checkboxes.addEventListener('click', () => {
     editIcon.classList.toggle('display-none');
     trashIcon.classList.toggle('remove');
-    list.classList.toggle('changeBg')
+    list.classList.toggle('changeBg');
     const checkedBox = document.querySelectorAll('.list');
-    
-    const getLocal = JSON.parse(localStorage.getItem('list'))
+
+    const getLocal = JSON.parse(localStorage.getItem('list'));
     const empty = [];
-    let count = 0;
+
     for (let i = 0; i < getLocal.length; i += 1) {
       if (checkedBox[i].classList.contains('changeBg')) {
         getLocal[i].completed = true;
-        count += 1;
       } else {
         getLocal[i].completed = false;
       }
       empty.push(getLocal[i]);
       localStorage.setItem('list', JSON.stringify(empty));
     }
-
   });
-  
 
-  
   trashIcon.addEventListener('click', () => {
     let count = 0;
+    /* eslint-disable */
     form.removeChild(list);
     const getLocal = JSON.parse(localStorage.getItem('list'));
     const data = Array.from(getLocal).filter((i) => i.completed === false);
-    data.map(i => i.index = count +=1)
-    
+    data.map((i) => i.index = count += 1);
+
     localStorage.setItem('list', JSON.stringify(data));
   });
-
 
   editIcon.addEventListener('click', () => {
     const editInput = document.createElement('input');
@@ -83,7 +76,6 @@ const createList = () => {
   });
 };
 
-
 const add = document.querySelector('.list-input');
 add.addEventListener('keypress', (e) => {
   if (e.key === 'Enter' && add.value) {
@@ -96,7 +88,7 @@ add.addEventListener('keypress', (e) => {
       listText[i].textContent = array[i].description;
     }
     add.value = null;
-    localStorage.setItem('list' , JSON.stringify(array));
+    localStorage.setItem('list', JSON.stringify(array));
   }
 });
 
@@ -112,8 +104,3 @@ window.addEventListener('load', () => {
     array = getLocal;
   }
 });
-
-
-
-
-
