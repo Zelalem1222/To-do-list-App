@@ -20,7 +20,6 @@ To get a local copy up and running follow these simple example steps.
 - You can use live server.
 
 
-
 ## Author
 
  👤 **Zelalem Fissha**
