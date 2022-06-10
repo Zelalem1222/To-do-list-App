@@ -23,6 +23,7 @@ const createList = () => {
   checkboxes.addEventListener('click', () => {
     editIcon.classList.toggle('display-none');
     trashIcon.classList.toggle('remove');
+    listText.classList.toggle('decoration');
     list.classList.toggle('changeBg');
     const checkedBox = document.querySelectorAll('.list');
 
@@ -42,10 +43,9 @@ const createList = () => {
 
   const clearAll = document.querySelector('#clear');
   clearAll.addEventListener('click', () => {
-    console.log('clicked')
     const getLocal = JSON.parse(localStorage.getItem('list'));
     const selected = document.querySelectorAll('.changeBg');
-    for (let i = 0; i < variable.length; i += 1) {
+    for (let i = 0; i < selected.length; i += 1) {
       form.removeChild(selected[i]);
     }
     const empty = [];
