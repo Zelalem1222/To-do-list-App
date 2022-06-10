@@ -48,6 +48,7 @@ const createList = () => {
     for (let i = 0; i < selected.length; i += 1) {
       form.removeChild(selected[i]);
     }
+    /* eslint-disable */
     const empty = [];
     for (let i = 0; i < getLocal.length; i += 1) {
       if (getLocal[i].completed === true) {
