@@ -31,8 +31,20 @@ form .list-input {
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+}
+
+.header-items {
+  display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form {
+  width: 100%;
 }
 
 .list {
@@ -41,6 +53,7 @@ form .list-input {
   align-items: center;
   font-weight: 700;
 }
+
 
 .fa-ellipsis-vertical:hover {
   cursor: move;
@@ -59,17 +72,16 @@ button {
   color: lightgray;
 }
 
-.check-box {
-    background-color: yellow;
-    flex: 1;
-}
-
-.checked-class {
-text-decoration: line-through;
-}
-
-.fa-trash-can {
+.display-none {
     display: none;
+}
+
+.remove {
+  display: none;
+}
+
+.changeBg {
+  color: currentColor;
 }
 
 .delete-icon {
