@@ -40,6 +40,24 @@ const createList = () => {
     }
   });
 
+  const clearAll = document.querySelector('#clear');
+  clearAll.addEventListener('click', () => {
+    console.log('clicked')
+    const getLocal = JSON.parse(localStorage.getItem('list'));
+    const selected = document.querySelectorAll('.changeBg');
+    for (let i = 0; i < variable.length; i += 1) {
+      form.removeChild(selected[i]);
+    }
+    const empty = [];
+    for (let i = 0; i < getLocal.length; i += 1) {
+      if (getLocal[i].completed === true) {
+        continue;
+      }
+      empty.push(getLocal[i]);
+    }
+    localStorage.setItem('list', JSON.stringify(empty));
+  });
+
   trashIcon.addEventListener('click', () => {
     let count = 0;
     /* eslint-disable */
