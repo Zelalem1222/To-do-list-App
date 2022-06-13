@@ -49,12 +49,14 @@ const createList = () => {
       form.removeChild(selected[i]);
     }
     /* eslint-disable */
+    
     const empty = [];
     for (let i = 0; i < getLocal.length; i += 1) {
       if (getLocal[i].completed === true) {
         continue;
       }
       empty.push(getLocal[i]);
+
     }
     localStorage.setItem('list', JSON.stringify(empty));
   });
