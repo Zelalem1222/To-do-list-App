@@ -3,7 +3,6 @@ import Object from './constructor.js';
 
 let array = [];
 
-// Create list
 const createList = () => {
   const form = document.querySelector('.form');
   const list = document.createElement('div');
