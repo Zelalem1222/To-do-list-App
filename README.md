@@ -19,7 +19,9 @@ To get a local copy up and running follow these simple example steps.
 - open `index.html` in your browser.
 - You can use live server.
 
+## Live Demo
 
+ [Live Demo](https://zelalem1222.github.io/To-do-list-App/)
 
 ## Author
 
