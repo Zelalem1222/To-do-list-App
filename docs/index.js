@@ -1,5 +1,5 @@
 
-import Object from './constructor';
+import Object from './constructor.js';
 
 let array = [];
 
