@@ -63,12 +63,12 @@ const createList = () => {
 
   trashIcon.addEventListener('click', () => {
     let count = 0;
-    /* eslint-disable */
+    
     form.removeChild(list);
     const getLocal = JSON.parse(localStorage.getItem('list'));
     const data = Array.from(getLocal).filter((i) => i.completed === false);
     data.map((i) => i.index = count += 1);
-
+    count +=1;
     localStorage.setItem('list', JSON.stringify(data));
   });
 
