@@ -3,20 +3,25 @@ import Object from './constructor.js';
 
 let array = [];
 
+
+
 // Create list
 const createList = () => {
   const form = document.querySelector('.form');
   const list = document.createElement('div');
+  const checkboxes = document.createElement('input');
+  const listText = document.createElement('span');
+  const editIcon = document.createElement('i');
+  const trashIcon = document.createElement('i');
+ 
   list.className = 'list border-bottom';
   form.appendChild(list);
-  const checkboxes = document.createElement('input');
   checkboxes.className = 'check';
   checkboxes.type = 'checkbox';
-  const listText = document.createElement('span');
   listText.className = 'listContent';
-  const editIcon = document.createElement('i');
+
   editIcon.className = 'fa-solid fa-ellipsis-vertical';
-  const trashIcon = document.createElement('i');
+ 
   trashIcon.className = 'fa-solid fa-trash-can remove';
   list.append(checkboxes, listText, editIcon, trashIcon);
 
@@ -61,16 +66,7 @@ const createList = () => {
     localStorage.setItem('list', JSON.stringify(empty));
   });
 
-  trashIcon.addEventListener('click', () => {
-    let count = 0;
-    
-    form.removeChild(list);
-    const getLocal = JSON.parse(localStorage.getItem('list'));
-    const data = Array.from(getLocal).filter((i) => i.completed === false);
-    data.map((i) => i.index = count += 1);
-    count +=1;
-    localStorage.setItem('list', JSON.stringify(data));
-  });
+  
 
   editIcon.addEventListener('click', () => {
     const editInput = document.createElement('input');
@@ -95,7 +91,30 @@ const createList = () => {
       }
     });
   });
+
+   const remove = trashIcon.addEventListener('click', () => {
+    let count = 0;
+    form.removeChild(list);
+    const getLocal = JSON.parse(localStorage.getItem('list'));
+    const data = Array.from(getLocal).filter((i) => i.completed === false);
+    data.map((i) => i.index = count += 1);
+    count +=1;
+    localStorage.setItem('list', JSON.stringify(data));
+  });
 };
+
+const removeIcon = document.querySelectorAll('.fa-trash-can');
+removeIcon[0].addEventListener('click' , ()=> {
+  console.log('clicked');
+})
+// for(const remove of removeIcon ){
+//     remove.addEventListener('click' , () => {
+//       console.log('clicked');
+//     })
+// }
+
+
+
 
 const add = document.querySelector('.list-input');
 add.addEventListener('keypress', (e) => {
@@ -112,6 +131,10 @@ add.addEventListener('keypress', (e) => {
     localStorage.setItem('list', JSON.stringify(array));
   }
 });
+
+
+
+ 
 
 // Window Load event
 window.addEventListener('load', () => {
