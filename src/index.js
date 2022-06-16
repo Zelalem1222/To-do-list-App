@@ -34,6 +34,7 @@ addList();
 
 
 
+
 // Window Load event
 window.addEventListener('load', () => {
   const getLocal = JSON.parse(localStorage.getItem('list'));

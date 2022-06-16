@@ -17,7 +17,7 @@ export const createList = () => {
     trashIcon.className = 'fa-solid fa-trash-can remove';
     list.append(checkboxes, listText, editIcon, trashIcon);
   
-    checkboxes.addEventListener('click', () => {
+    const select = checkboxes.addEventListener('click', () => {
       editIcon.classList.toggle('display-none');
       trashIcon.classList.toggle('remove');
       listText.classList.toggle('decoration');
@@ -60,7 +60,7 @@ export const createList = () => {
   
     
   
-    editIcon.addEventListener('click', () => {
+    const edit = editIcon.addEventListener('click', () => {
       const editInput = document.createElement('input');
       editInput.type = 'text';
       editInput.className = 'listContent';
@@ -84,7 +84,7 @@ export const createList = () => {
       });
     });
   
-     const remove = trashIcon.addEventListener('click', () => {
+     const remove = () => {trashIcon.addEventListener('click', () => {
       let count = 0;
       form.removeChild(list);
       const getLocal = JSON.parse(localStorage.getItem('list'));
@@ -92,5 +92,10 @@ export const createList = () => {
       data.map((i) => i.index = count += 1);
       count +=1;
       localStorage.setItem('list', JSON.stringify(data));
-    });
+    }) };
+
+remove();
   };
+
+  
+  
