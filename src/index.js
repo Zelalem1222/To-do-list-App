@@ -1,12 +1,15 @@
 import './style.css';
-import { createList } from './modules/creatList';
-import Object from "./constructor";
+import { createList } from './modules/creatList.js';
+import Object from "./constructor.js";
 
 
 
 
 // Create list
 let array = [];
+
+
+
 const add = document.querySelector('.list-input')
 export const addList = () => {
     add.addEventListener('keypress', (e) => {
