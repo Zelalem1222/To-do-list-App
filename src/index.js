@@ -1,6 +1,7 @@
 import './style.css';
 import Object from './constructor.js';
 
+
 let array = [];
 
 
@@ -103,20 +104,7 @@ const createList = () => {
   });
 };
 
-const removeIcon = document.querySelectorAll('.fa-trash-can');
-removeIcon[0].addEventListener('click' , ()=> {
-  console.log('clicked');
-})
-// for(const remove of removeIcon ){
-//     remove.addEventListener('click' , () => {
-//       console.log('clicked');
-//     })
-// }
-
-
-
-
-const add = document.querySelector('.list-input');
+ export const add = document.querySelector('.list-input');
 add.addEventListener('keypress', (e) => {
   if (e.key === 'Enter' && add.value) {
     const object = new Object(add.value, false, array.length);
@@ -131,6 +119,7 @@ add.addEventListener('keypress', (e) => {
     localStorage.setItem('list', JSON.stringify(array));
   }
 });
+
 
 
 
