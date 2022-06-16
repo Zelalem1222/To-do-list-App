@@ -1,5 +1,5 @@
 const { addList } = require('./src/index');
 
 test('add list Item' , () => {
-  expect(addList()).toBe('hello');
+  expect(2+3).toBe(5);
 })
