@@ -1,5 +1,5 @@
-const { add } = require('./src/index');
+const { addList } = require('./src/index');
 
 test('add list Item' , () => {
-  expect(add()).toBe('hello');
+  expect(addList()).toBe('hello');
 })
