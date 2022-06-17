@@ -2,7 +2,7 @@ import './style.css';
 import { createList } from './modules/creatList.js';
 import { addTodo } from './modules/functions';
 
-
+let tasks = localStorage.getItem('list') ?? [];
 
 // Create list
 
@@ -31,7 +31,7 @@ addList();
 
 // Window Load event
 window.addEventListener('load', () => {
-  const getLocal = JSON.parse(localStorage.getItem('list')) || [];
+  const getLocal = JSON.parse(localStorage.getItem('list')) ?? [];
   for (let i = 0; i < getLocal.length; i += 1) {
     createList();
     const listText = document.querySelectorAll('.listContent');
