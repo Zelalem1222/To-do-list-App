@@ -1,4 +1,3 @@
-
 import Object from './constructor.js';
 
 let array = [];
