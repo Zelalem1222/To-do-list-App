@@ -1,3 +1,5 @@
+import { deleteTodo } from "./functions";
+
 export const createList = () => {
     const form = document.querySelector('.form');
     const list = document.createElement('div');
@@ -17,14 +19,14 @@ export const createList = () => {
     trashIcon.className = 'fa-solid fa-trash-can remove';
     list.append(checkboxes, listText, editIcon, trashIcon);
   
-    const select = checkboxes.addEventListener('click', () => {
+    checkboxes.addEventListener('click', () => {
       editIcon.classList.toggle('display-none');
       trashIcon.classList.toggle('remove');
       listText.classList.toggle('decoration');
       list.classList.toggle('changeBg');
       const checkedBox = document.querySelectorAll('.list');
   
-      const getLocal = JSON.parse(localStorage.getItem('list'));
+      const getLocal = JSON.parse(localStorage.getItem('list')) ?? [];
       const empty = [];
   
       for (let i = 0; i < getLocal.length; i += 1) {
@@ -87,8 +89,9 @@ export const createList = () => {
      const remove = () => {trashIcon.addEventListener('click', () => {
       let count = 0;
       form.removeChild(list);
-      const getLocal = JSON.parse(localStorage.getItem('list'));
-      const data = Array.from(getLocal).filter((i) => i.completed === false);
+      const tasks = JSON.parse(localStorage.getItem('list')) ?? [];
+      const index = tasks.find((i) => i.completed !== false).index;
+      const data = deleteTodo(index, tasks);
       data.map((i) => i.index = count += 1);
       count +=1;
       localStorage.setItem('list', JSON.stringify(data));
