@@ -37,6 +37,5 @@ window.addEventListener('load', () => {
     const listText = document.querySelectorAll('.listContent');
     listText[i].textContent = getLocal[i].description;
     localStorage.setItem('list', JSON.stringify(getLocal));
-
   }
 });
