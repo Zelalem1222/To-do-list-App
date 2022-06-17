@@ -4,20 +4,15 @@ import { addTodo } from './modules/functions';
 
 let tasks = localStorage.getItem('list') ?? [];
 
-
 // Create list
-let array = [];
 
-
-
-const add = document.querySelector('.list-input')
-export const addList = () => {
+const add = document.querySelector('.list-input');
+const addList = () => {
   add.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && add.value) {
-
       console.log(tasks);
       tasks = addTodo(add.value, tasks);
-      localStorage.setItem('list', tasks)
+      localStorage.setItem('list', tasks);
       e.preventDefault();
       createList();
       const listText = document.querySelectorAll('.listContent');
@@ -25,18 +20,14 @@ export const addList = () => {
         if (listText[i]) {
           listText[i].textContent = tasks[i].description;
         }
-
       }
       add.value = null;
       localStorage.setItem('list', JSON.stringify(tasks));
     }
   });
-}
+};
 
 addList();
-
-
-
 
 // Window Load event
 window.addEventListener('load', () => {
@@ -47,6 +38,5 @@ window.addEventListener('load', () => {
     listText[i].textContent = getLocal[i].description;
     localStorage.setItem('list', JSON.stringify(getLocal));
 
-    array = getLocal;
   }
 });

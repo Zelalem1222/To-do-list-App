@@ -1,53 +1,53 @@
-import { deleteTodo } from "./functions";
+import { deleteTodo } from './functions';
 
-export const createList = () => {
-    const form = document.querySelector('.form');
-    const list = document.createElement('div');
-    const checkboxes = document.createElement('input');
-    const listText = document.createElement('span');
-    const editIcon = document.createElement('i');
-    const trashIcon = document.createElement('i');
-   
-    list.className = 'list border-bottom';
-    form.appendChild(list);
-    checkboxes.className = 'check';
-    checkboxes.type = 'checkbox';
-    listText.className = 'listContent';
-  
-    editIcon.className = 'fa-solid fa-ellipsis-vertical';
-   
-    trashIcon.className = 'fa-solid fa-trash-can remove';
-    list.append(checkboxes, listText, editIcon, trashIcon);
-  
-    checkboxes.addEventListener('click', () => {
-      editIcon.classList.toggle('display-none');
-      trashIcon.classList.toggle('remove');
-      listText.classList.toggle('decoration');
-      list.classList.toggle('changeBg');
-      const checkedBox = document.querySelectorAll('.list');
-  
-      const getLocal = JSON.parse(localStorage.getItem('list')) ?? [];
-      const empty = [];
-  
-      for (let i = 0; i < getLocal.length; i += 1) {
-        if (checkedBox[i].classList.contains('changeBg')) {
-          getLocal[i].completed = true;
-        } else {
-          getLocal[i].completed = false;
-        }
-        empty.push(getLocal[i]);
-        localStorage.setItem('list', JSON.stringify(empty));
+const createList = () => {
+  const form = document.querySelector('.form');
+  const list = document.createElement('div');
+  const checkboxes = document.createElement('input');
+  const listText = document.createElement('span');
+  const editIcon = document.createElement('i');
+  const trashIcon = document.createElement('i');
+
+  list.className = 'list border-bottom';
+  form.appendChild(list);
+  checkboxes.className = 'check';
+  checkboxes.type = 'checkbox';
+  listText.className = 'listContent';
+
+  editIcon.className = 'fa-solid fa-ellipsis-vertical';
+
+  trashIcon.className = 'fa-solid fa-trash-can remove';
+  list.append(checkboxes, listText, editIcon, trashIcon);
+
+  checkboxes.addEventListener('click', () => {
+    editIcon.classList.toggle('display-none');
+    trashIcon.classList.toggle('remove');
+    listText.classList.toggle('decoration');
+    list.classList.toggle('changeBg');
+    const checkedBox = document.querySelectorAll('.list');
+
+    const getLocal = JSON.parse(localStorage.getItem('list')) ?? [];
+    const empty = [];
+
+    for (let i = 0; i < getLocal.length; i += 1) {
+      if (checkedBox[i].classList.contains('changeBg')) {
+        getLocal[i].completed = true;
+      } else {
+        getLocal[i].completed = false;
       }
-    });
-  
-    const clearAll = document.querySelector('#clear');
-    clearAll.addEventListener('click', () => {
-      const getLocal = JSON.parse(localStorage.getItem('list'));
-      const selected = document.querySelectorAll('.changeBg');
-      for (let i = 0; i < selected.length; i += 1) {
-        form.removeChild(selected[i]);
-      }
-      /* eslint-disable */
+      empty.push(getLocal[i]);
+      localStorage.setItem('list', JSON.stringify(empty));
+    }
+  });
+
+  const clearAll = document.querySelector('#clear');
+  clearAll.addEventListener('click', () => {
+    const getLocal = JSON.parse(localStorage.getItem('list'));
+    const selected = document.querySelectorAll('.changeBg');
+    for (let i = 0; i < selected.length; i += 1) {
+      form.removeChild(selected[i]);
+    }
+    /* eslint-disable */
       
       const empty = [];
       for (let i = 0; i < getLocal.length; i += 1) {
@@ -99,6 +99,9 @@ export const createList = () => {
 
 remove();
   };
+
+  export { createList };
+
 
   
   
