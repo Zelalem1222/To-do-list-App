@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple example steps.
  👤 **Zelalem Fissha**
 
 - GitHub: [@githubhandle](https://github.com/zelalem1222)
-
+- Linkedin : [@linkedin](https://www.linkedin.com/in/zelalem-fissha-52b093231/)
 
 ## 🤝 Contributing
 
